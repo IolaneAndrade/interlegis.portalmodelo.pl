@@ -27,11 +27,13 @@ class AddForm(form.AddForm):
 
     fields = field.Fields(IParliamentarian)
     fields['party_affiliation'].widgetFactory = DataGridFieldFactory
+    fields['birthday'].widgetFactory = DateFieldWidget
 
     def updateWidgets(self):
         super(AddForm, self).updateWidgets()
         self.widgets['party_affiliation'].allow_reorder = True
         self.widgets['party_affiliation'].auto_append = False
+        self.widgets['birthday'].allow_reorder = True
 
 
 class EditForm(form.EditForm):
@@ -43,6 +45,7 @@ class EditForm(form.EditForm):
     fields['description'].widgetFactory = WysiwygFieldWidget
     fields['party_affiliation'].widgetFactory = DataGridFieldFactory
     fields['birthday'].widgetFactory = DateFieldWidget
+
 
     def updateWidgets(self):
         # WORKAROUND
@@ -57,7 +60,7 @@ class EditForm(form.EditForm):
             DataGridField.auto_append = original_auto_append
             self.widgets['party_affiliation'].allow_reorder = True
             self.widgets['party_affiliation'].auto_append = False
-
+            self.widgets['birthday'].allow_reorder = True
 
 class Parliamentarians(grok.View):
     grok.context(ISAPLMenuItem)

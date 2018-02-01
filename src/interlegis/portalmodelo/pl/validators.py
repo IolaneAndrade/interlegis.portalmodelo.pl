@@ -3,8 +3,10 @@
 from datetime import date
 from DateTime import DateTime
 from datetime import datetime
-from interlegis.portalmodelo.pl import _
 from zope.interface import Invalid
+from zope.i18nmessageid import MessageFactory
+
+_ = MessageFactory("interlegis.portalmodelo.pl")
 
 
 def check_birthday(value):

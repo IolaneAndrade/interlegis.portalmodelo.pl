@@ -21,12 +21,6 @@
           />
     </select>
 
-    <option value=""
-          tal:repeat="item view/parliamentarians"
-          tal:content="item/Title"
-          tal:attributes="value item/UID;"
-        />
-
     <div id="content-core">
       <h2 i18n:translate="active_plural">Active</h2>
 

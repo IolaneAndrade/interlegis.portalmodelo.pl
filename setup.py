@@ -3,7 +3,7 @@
 from setuptools import find_packages
 from setuptools import setup
 
-version = '1.0rc4.dev0'
+version = '1.0rc5.dev0'
 description = 'Portal Modelo: IntegraĂ§ĂŁo com sistemas do processo legislativo.'
 long_description = (
     open('README.rst').read() + '\n' +
@@ -69,6 +69,7 @@ setup(
         'zope.interface',
         'zope.intid',
         'zope.schema',
+        'DateTime',
     ],
     extras_require={
         'test': [
